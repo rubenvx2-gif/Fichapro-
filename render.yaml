@@ -2,7 +2,7 @@ services:
   - type: web
     name: fichapro
     runtime: python
-    plan: starter
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
