@@ -11,10 +11,6 @@ services:
       - key: HTTPS
         value: "1"
       - key: DB
-        value: /data/fichapro.db
+        value: fichapro.db
       - key: PLATFORM_PASSWORD
         sync: false
-    disk:
-      name: data
-      mountPath: /data
-      sizeGB: 1
