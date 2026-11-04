@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: fichapro
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: HTTPS
+        value: "1"
+      - key: DB
+        value: /data/fichapro.db
+      - key: PLATFORM_PASSWORD
+        sync: false
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
